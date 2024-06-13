@@ -3,6 +3,7 @@ class Similarity:
         pass
 
     def score(self, a, b):
-        gap = len(a) - len(b)
+        A = len(a) if len(a) > len(b) else len(b)
         B = len(b) if len(a) > len(b) else len(a)
-        return (1 - gap / B) * 60
+        Gap = A - B
+        return (1 - Gap / B) * 60
